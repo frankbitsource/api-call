@@ -1,4 +1,3 @@
-5f8b6cbb8f93b412d458af5167fb28f4
 const apiKey = "5f8b6cbb8f93b412d458af5167fb28f4";
 
 async function fetchWeather() {
