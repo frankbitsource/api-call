@@ -6,22 +6,29 @@
   <title>Weather App</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="flex items-center justify-center h-screen bg-gray-100">
-  <div class="max-w-md w-full p-6 bg-white rounded-lg shadow-md">
-    <h1 class="text-xl font-semibold mb-4">Weather App</h1>
-    <input id="cityInput" class="w-full mb-4 p-2 border border-gray-300 rounded" placeholder="Enter City Name">
-    <button onclick="fetchWeather()" class="w-full bg-blue-500 text-white p-2 rounded">Get Weather</button>
-    <table id="weatherTable" class="w-full mt-4 hidden">
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-400 via-teal-400 to-green-500">
+  <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-sm w-full">
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">Weather App</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" 
+           class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:border-blue-400">
+    <button onclick="fetchWeather()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+      Get Weather
+    </button>
+    <table id="weatherTable" class="hidden mt-4 w-full text-left border border-gray-200 rounded">
       <thead>
         <tr>
-          <th>Weather</th>
-          <th>Temperature (°C)</th>
-          <th>Humidity (%)</th>
+          <th class="p-2 border-b border-gray-200 font-semibold text-gray-600">Property</th>
+          <th class="p-2 border-b border-gray-200 font-semibold text-gray-600">Value</th>
         </tr>
       </thead>
-      <tbody id="weatherData"></tbody>
+      <tbody id="weatherData">
+        <!-- Weather data will be inserted here -->
+      </tbody>
     </table>
+    <p id="errorMessage" class="text-red-500 mt-4 hidden">City not found. Please try again.</p>
   </div>
+  
   <script src="app.js"></script>
 </body>
 </html>
+
